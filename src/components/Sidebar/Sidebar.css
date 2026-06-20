@@ -1,0 +1,114 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem 1.5rem 2rem 2rem;
+  border-right: 1px solid var(--border-faint);
+  background: var(--bg);
+}
+
+.sidebarTop {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.brandName {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.brandRole {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.sidebarBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cvButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.25rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.015em;
+  color: var(--text-secondary);
+  background: transparent;
+  transition: color var(--transition), border-color var(--transition), background-color var(--transition);
+}
+
+.cvButton:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  border-radius: 2px;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.socialLink:hover {
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-faint);
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .sidebarTop {
+    gap: 1.25rem;
+  }
+
+  .cvButton {
+    max-width: 220px;
+  }
+
+  .sidebarBottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

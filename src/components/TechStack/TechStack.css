@@ -1,0 +1,294 @@
+.techStack {
+  margin-bottom: var(--section-gap);
+  width: min(
+    1040px,
+    calc(100vw - var(--sidebar-width) - var(--page-padding) - clamp(2rem, 6vw, 5rem))
+  );
+}
+
+.stackGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.85fr);
+  gap: clamp(2.25rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.groupLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.row {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  padding-bottom: 0.625rem;
+  border-bottom: 1px solid var(--border-faint);
+  transition: border-color var(--transition), color var(--transition), transform var(--transition);
+}
+
+.row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.row:hover,
+.row:focus-visible,
+.rowActive {
+  border-bottom-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.row:hover,
+.rowActive {
+  transform: translateX(0.25rem);
+}
+
+.techName {
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.separator {
+  margin: 0 0.5rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.keywords {
+  color: var(--text-secondary);
+}
+
+.compact {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.compactLabel {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  margin-right: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.compactItem {
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: default;
+  transition: color var(--transition);
+}
+
+.compactItem:hover,
+.compactItem:focus-visible {
+  color: var(--accent);
+}
+
+.compactSep {
+  margin: 0 0.375rem;
+  opacity: 0.4;
+}
+
+.stackPanel {
+  position: sticky;
+  top: 3rem;
+  min-height: calc(100vh - 6rem);
+  padding: clamp(1.25rem, 2vw, 1.75rem);
+  border: 1px solid var(--border-faint);
+  background:
+    linear-gradient(180deg, var(--accent-subtle), transparent 40%),
+    var(--bg-subtle);
+  overflow: hidden;
+}
+
+.stackPanel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border-faint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-faint) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.3;
+}
+
+.stackPanelContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 9.5rem);
+  animation: stackFade 180ms ease both;
+}
+
+.stackPanelNeutral {
+  justify-content: flex-end;
+}
+
+.stackPanelEyebrow,
+.stackLogoLabel {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.stackPanel h3 {
+  margin-top: 1.25rem;
+  font-size: clamp(1.2rem, 2.8vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.stackPanel p {
+  margin-top: 0.9rem;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.stackTradeoff {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-faint);
+}
+
+.stackTradeoffLabel {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.stackTradeoff p {
+  margin-top: 0.55rem;
+}
+
+.stackLogoLabel {
+  margin-top: 2rem;
+}
+
+.techLogoCloud {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.8rem;
+}
+
+.techLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border-faint);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-secondary);
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+}
+
+.techLogoMark {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 1.05rem;
+  height: 1.05rem;
+  border: 1px solid var(--accent);
+  font-size: 0.45rem;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.techLogo-java .techLogoMark,
+.techLogo-quarkus .techLogoMark,
+.techLogo-graalvm .techLogoMark,
+.techLogo-spring .techLogoMark,
+.techLogo-kafka .techLogoMark,
+.techLogo-kubernetes .techLogoMark,
+.techLogo-openshift .techLogoMark,
+.techLogo-jenkins .techLogoMark,
+.techLogo-redis .techLogoMark,
+.techLogo-mongodb .techLogoMark {
+  border-radius: 50%;
+}
+
+.techLogo-quarkus .techLogoMark,
+.techLogo-kubernetes .techLogoMark,
+.techLogo-openshift .techLogoMark {
+  border-color: #4c8bf5;
+}
+
+.techLogo-java .techLogoMark,
+.techLogo-jenkins .techLogoMark {
+  border-color: #d62d20;
+}
+
+.techLogo-spring .techLogoMark,
+.techLogo-mongodb .techLogoMark,
+.techLogo-redis .techLogoMark,
+.techLogo-infinispan .techLogoMark {
+  border-color: #77b255;
+}
+
+.techLogo-kafka .techLogoMark,
+.techLogo-oracle .techLogoMark {
+  border-color: #f0eee8;
+}
+
+@keyframes stackFade {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1023px) {
+  .techStack {
+    width: 100%;
+  }
+
+  .stackGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .stackPanel {
+    display: none;
+  }
+}

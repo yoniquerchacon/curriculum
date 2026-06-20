@@ -1,0 +1,35 @@
+.profile {
+  margin-bottom: var(--section-gap);
+  padding-bottom: var(--section-gap);
+  border-bottom: 1px solid var(--border-faint);
+}
+
+.statement {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  max-width: 58ch;
+  margin-bottom: 2rem;
+}
+
+.focusList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.focusItem {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  padding-left: 1rem;
+  border-left: 1px solid var(--border);
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.focusItem:hover {
+  color: var(--text-primary);
+  border-left-color: var(--accent);
+}

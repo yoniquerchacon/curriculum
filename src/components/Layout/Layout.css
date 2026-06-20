@@ -1,0 +1,24 @@
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  min-height: 100vh;
+}
+
+.main {
+  padding: 0 var(--page-padding) var(--page-padding);
+  padding-right: clamp(2rem, 6vw, 5rem);
+}
+
+.mainInner {
+  max-width: var(--content-max);
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .main {
+    padding: 0 1.25rem 2rem;
+  }
+}

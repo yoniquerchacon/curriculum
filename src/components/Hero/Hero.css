@@ -1,0 +1,58 @@
+.hero {
+  padding-top: clamp(2.5rem, 8vh, 5rem);
+  padding-bottom: var(--section-gap);
+}
+
+.heroTitle {
+  font-size: clamp(2.125rem, 5.5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  color: var(--text-primary);
+  max-width: 18ch;
+  margin-bottom: 1.5rem;
+}
+
+.heroSubline {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--text-muted);
+  margin-bottom: 2.75rem;
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.125rem 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.metaSep {
+  margin: 0 0.625rem;
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.metaLink {
+  color: var(--text-secondary);
+  transition: color var(--transition);
+}
+
+.metaLink:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 1.75rem;
+  }
+
+  .heroTitle {
+    max-width: none;
+  }
+}

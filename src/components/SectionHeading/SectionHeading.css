@@ -1,0 +1,11 @@
+.sectionHeading {
+  margin-bottom: 2.75rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
