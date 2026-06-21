@@ -36,7 +36,7 @@ html {
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
   --sidebar-width: 220px;
-  --content-max: 680px;
+  --content-max: 1120px;
   --page-padding: clamp(1.5rem, 5vw, 3.5rem);
   --section-gap: clamp(4.5rem, 10vh, 7rem);
 

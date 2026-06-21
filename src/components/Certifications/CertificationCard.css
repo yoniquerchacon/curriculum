@@ -53,12 +53,13 @@
 
 .credential:hover,
 .credential:focus-visible,
-.credentialActive {
+.credential:focus-within {
   border-bottom-color: var(--accent);
 }
 
 .credential:hover,
-.credentialActive {
+.credential:focus-visible,
+.credential:focus-within {
   transform: translateX(0.25rem);
 }
 

@@ -1,16 +1,6 @@
 .experience {
   margin-bottom: var(--section-gap);
-  width: min(
-    1040px,
-    calc(100vw - var(--sidebar-width) - var(--page-padding) - clamp(2rem, 6vw, 5rem))
-  );
-}
-
-.experienceGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.85fr);
-  gap: clamp(2.25rem, 5vw, 4.5rem);
-  align-items: start;
+  width: 100%;
 }
 
 .timeline {
@@ -38,12 +28,13 @@
 
 .entry:hover,
 .entry:focus-visible,
-.entryActive {
+.entry:focus-within {
   border-top-color: var(--accent);
 }
 
 .entry:hover,
-.entryActive {
+.entry:focus-visible,
+.entry:focus-within {
   transform: translateX(0.25rem);
 }
 
@@ -59,6 +50,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.625rem;
+  min-width: 0;
 }
 
 .entryBrand {
@@ -128,52 +120,6 @@
   color: var(--text-secondary);
 }
 
-.experiencePanel {
-  position: sticky;
-  top: 3rem;
-  min-height: calc(100vh - 6rem);
-  padding: clamp(1.25rem, 2vw, 1.75rem);
-  border: 1px solid var(--border-faint);
-  background:
-    linear-gradient(180deg, var(--accent-subtle), transparent 40%),
-    var(--bg-subtle);
-  overflow: hidden;
-}
-
-.experiencePanel::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(var(--border-faint) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border-faint) 1px, transparent 1px);
-  background-size: 28px 28px;
-  opacity: 0.3;
-}
-
-.experiencePanelContent {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 9.5rem);
-  animation: companyFade 180ms ease both;
-}
-
-.experiencePanelNeutral {
-  justify-content: flex-end;
-}
-
-.experiencePanelEyebrow,
-.experienceSignals dt {
-  font-family: var(--font-mono);
-  font-size: 0.625rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
 .companyLogo {
   display: inline-flex;
   align-items: center;
@@ -223,75 +169,6 @@
 .companyLogo-supercable .companyLogoMark {
   border-color: #35d0ba;
   border-radius: 999px;
-}
-
-.experiencePanelMeta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1rem;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  color: var(--accent);
-}
-
-.experiencePanel h3 {
-  margin-top: 1.25rem;
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  line-height: 1.35;
-  letter-spacing: -0.015em;
-  color: var(--text-primary);
-}
-
-.experiencePanel p {
-  margin-top: 0.9rem;
-  font-size: 0.875rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-}
-
-.experienceSignals {
-  display: grid;
-  gap: 1rem;
-  margin-top: auto;
-  padding-top: 2rem;
-}
-
-.experienceSignals div {
-  border-top: 1px solid var(--border-faint);
-  padding-top: 0.75rem;
-}
-
-.experienceSignals dd {
-  margin-top: 0.25rem;
-  font-size: 0.8125rem;
-  color: var(--text-secondary);
-}
-
-@keyframes companyFade {
-  from {
-    opacity: 0;
-    transform: translateY(0.35rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 1023px) {
-  .experience {
-    width: 100%;
-  }
-
-  .experienceGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .experiencePanel {
-    display: none;
-  }
 }
 
 @media (max-width: 640px) {

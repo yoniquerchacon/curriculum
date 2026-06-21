@@ -13,22 +13,15 @@ export function CertificationCard({
   code,
   version,
   variant = 'training',
-  isActive = false,
-  onMouseEnter,
-  onFocus,
 }) {
   const hasDocument = documentUrl && documentUrl !== PLACEHOLDER;
   const isOfficial = variant === 'official';
 
   return (
     <article
-      className={`credential ${isOfficial ? 'credentialOfficial' : ''} ${
-        isActive ? 'credentialActive' : ''
-      }`}
+      className={`credential ${isOfficial ? 'credentialOfficial' : ''}`}
       aria-label={`${name} — ${issuer}`}
       tabIndex={0}
-      onMouseEnter={onMouseEnter}
-      onFocus={onFocus}
     >
       <span
         className={`credentialIssuerMark ${

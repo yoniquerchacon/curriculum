@@ -1,9 +1,6 @@
 .techStack {
   margin-bottom: var(--section-gap);
-  width: min(
-    1040px,
-    calc(100vw - var(--sidebar-width) - var(--page-padding) - clamp(2rem, 6vw, 5rem))
-  );
+  width: 100%;
 }
 
 .stackGrid {
